@@ -10,7 +10,7 @@ import urllib.request
 import os
 import pwd
 
-#gets username for linux user
+#gets username for linux user. Should get Windows ID as well.
 user = pwd.getpwuid( os.getuid() )[ 0 ]
 
 #logon information
@@ -35,7 +35,7 @@ for submission in top_subreddit:
 	myurl = submission.url
 	
 	#saves in pictures folder in directory 'Flork.'
-	#If using windows, just edit this line to get your filepath.
+	#If using windows, just edit this line to get your filepath. Variable user should still work with Windows
 	saveplace = "/home/" + user + "/Pictures/Flork/" + filename + ".jpg"
 
 	urllib.request.urlretrieve(myurl, saveplace)
